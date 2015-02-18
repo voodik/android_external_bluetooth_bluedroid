@@ -482,7 +482,7 @@ static void cleanup(void)
         {
             epilog_wait_timer();
             // Stop reading thread
-            userial_close_reader();
+//            userial_close_reader();
 
             thread_post(hc_cb.worker_thread, event_epilog, NULL);
         }

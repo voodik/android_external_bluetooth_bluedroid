@@ -134,14 +134,14 @@ LOCAL_SHARED_LIBRARIES := \
 	liblog \
 	libpower \
 	libutils \
+	libbt-hci \
+	libbt-utils \
 	libmedia
 
 LOCAL_STATIC_LIBRARIES := \
 	libbt-brcm_bta \
 	libbt-brcm_gki \
 	libbt-brcm_stack \
-	libbt-hci \
-	libbt-utils \
 	libbt-qcom_sbc_decoder \
 	libosi \
 	libtinyxml2 \
