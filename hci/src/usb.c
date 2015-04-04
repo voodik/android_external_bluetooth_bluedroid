@@ -164,6 +164,7 @@ typedef struct
 static struct bt_usb_device btusb_table[] = {
     /* Generic Bluetooth USB device */
     { BT_USB_DEVICE_INFO(0xe0, 0x01, 0x01) },
+    { BT_USB_DEVICE_INFO(0xef, 0x02, 0x01) },
     { }     /* Terminating entry */
 };
 
@@ -778,6 +779,7 @@ out :
         libusb_release_interface(usb.handle, 0);
         libusb_close(usb.handle);
         libusb_exit(NULL);
+        usb.handle = NULL;
     }
     return FALSE;
 }
@@ -1053,6 +1055,7 @@ uint16_t usb_write(uint16_t msg_id, uint8_t *p_data, uint16_t len)
     static int xmit_count;
 
     if (usb.handle == NULL) {
+        USBERR( "usb_write: usb not opened");
         return 0;
     }
 
