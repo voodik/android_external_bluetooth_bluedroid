@@ -562,7 +562,11 @@ void bta_hh_co_send_hid_info(btif_hh_device_t *p_dev, char *dev_name, UINT16 ven
              p_dev->bd_addr.address[1], p_dev->bd_addr.address[0]);
     ev.u.create.rd_size = dscp_len;
     ev.u.create.rd_data = p_dscp;
+#if (BLUETOOTH_HCI_USE_USB == TRUE)
+    ev.u.create.bus = BUS_USB;
+#else
     ev.u.create.bus = BUS_BLUETOOTH;
+#endif
     ev.u.create.vendor = vendor_id;
     ev.u.create.product = product_id;
     ev.u.create.version = version;
