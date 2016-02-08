@@ -915,7 +915,7 @@ void bta_dm_pm_timer(tBTA_DM_MSG *p_data)
 {
 
     APPL_TRACE_WARNING("proc dm_pm_timer expires");
-    bta_dm_pm_set_mode(p_data->pm_status.bd_addr, TRUE);
+//    bta_dm_pm_set_mode(p_data->pm_status.bd_addr, TRUE);
 
 
 }
